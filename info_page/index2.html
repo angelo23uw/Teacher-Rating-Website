@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!-- hancy July 28-->
+
+<html lang="zh-CN">
+<head>
+  <!-- title of index-->
+  <title>师论--学生自己的教师评价平台</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="教师，评教，国内，学生，教育，大学，课程，学习">
+  <meta name="description" content="为中国学生建立的教师评价系统，只为了更优质的教学资源">
+
+  <!-- the style of index-->
+  <link rel="stylesheet" href="index2.css">
+
+  <!-- the script of index-->
+  <script src="index2.js"></script>
+
+</head>
+<body>
+  <div id="mainContainer">
+  <header>
+    <!-- this is the first block, where we can put the name of professor or the result of search-->
+    <div id="container1">
+      <img src="icon_noperson.jpg" alt="noperson" />
+      <div class="topmargin">
+        <p>教授</p>
+        <h1>Evan McCarty</h1>
+        <p>华盛顿大学<br/>
+        计算机系教授</p>
+      </div>
+    </div>
+    <!-- this is the second block, where it shows a switch bar-->
+    <div id="container2">
+      <div class="switch">
+        <h3>老师</h3>
+        <p>PROFS</p>
+      </div>
+      <div class="switch">
+        <h3>学校</h3>
+        <p>SCHOOL</p>
+      </div>
+      <div class="switch">
+        <h3>评价</h3> 
+        <p>RATE</p>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- here is the third block, where it shows the content of the main page -->
+    <div id="container3">
+      <!-- the top part of the thrid block -->
+      <div id="search-bar">
+        <div class="writing">
+          <h1>条学生的评论</h1>
+          <input type="text" class="form-control" placeholder="发表你的评论" />
+          <span class="input-group-btn">
+            <button class="btn">完善你的评论</button>
+          </span>
+        </div>
+      </div>
+      <!-- the filter bar-->
+      <div class="filter">
+      	<div id="sum">
+      		<p>总评价</p>
+      	</div>
+        <div id="info">
+        	<p>课程信息</p>
+        </div>
+        <div id="comment">
+        	<p>评论</p>
+        </div>
+      </div>
+
+      <div class="comments-container">
+        <ul>
+          <li>
+            <div class="comment">
+              <div class="sum-c">
+                <div class="time"><p>2017/12/13</p></div>
+                <p><img src="sadface.jpg" alt="bad" />
+                <span class="left-margin">不行</span><p>
+                <p><span class="number">2.0</span><span class="left-margin">总评分</span></p>
+                <p><span class="number">4.0</span><span class="left-margin">难度评分</span></p>
+              </div>
+              <div class="info-c">
+                <p>CSE373</p>
+                <br /><br />
+                <p>学分：有</p>
+                <p>考勤：需要签到</p>
+                <br />
+                <p>教材使用与否：否</p>
+                <p>该课程成绩：A</p>
+              </div>
+              <div class="comment-c">
+                <div class="label">平易近人</div>
+                <p>课程工作繁重，代码很有趣，他的编码和脚本都很有趣，随时准备讨论要点
+                所设计的主题和软件开发面试题极其相关。非常有用，关注数据结构和运行时理论。
+                evan是研究生中级讲师，他的截止日期通常比较晚，而且他的联系教材很少，整体很好</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- the last container which is like a side bar-->
+    <div id="container4">
+      <div id="overall">
+      	<div class="score">
+      		<p>总评分<br >
+      		<span class="bignumber">4.0</span>
+      		</p>
+      	</div> 
+      	<div class="subtotal">
+      		<p>
+      			是否还会选择这位老师<br />
+      			<span class="less-big-number">N/A</span>
+      			<br />难易评分<br>
+      			<span class="less-big-number">3.0</span>
+      		</p>	      	
+      	</div>
+      </div>
+      <div class="labels">
+      	<div class="label">平易近人</div>
+      	<div class="label">令人尊敬</div>
+      	<div class="label">风趣幽默</div>
+      </div>
+    </div>
+  </main>
+  </div>
+</body>
+</html>
