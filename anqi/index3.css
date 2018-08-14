@@ -22,6 +22,7 @@ body{
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
 #mainContainer {
   left: auto;
   right: auto;
@@ -58,6 +59,10 @@ ul {
   margin: 0px;
   padding: 0px;
 
+}
+#container3 h3{
+  padding-left: 20px;
+  color: #ad4655;
 }
 #container1 {
   width: 590px;
@@ -100,27 +105,15 @@ ul {
   border: none;
   padding-left: 8px;
 }
-.filter {
+.btn {
+  width: 109px;
+  text-align: center;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin: 0px;
   background-color: #e6ddd6;
-  color: #b1aa9a;
-  float: left;
-  width: 600px;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: x-small;
 }
-.comment {
-  width: 600px;
-  height: 160px;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 65%;
-}
-.sum-c {
-  width: 110px;
-  padding: 10px;
-  background-color: #d8d4cc;
-}
+
 .number {
   font-size: large;
   margin-left: 5px;
@@ -129,34 +122,6 @@ ul {
   padding-top: 5px;
   padding-bottom:5px;
   border-bottom: 1px solid;
-}
-.info-c {
-  width: 89px;
-  padding: 10px;
-  border-right: 1px solid;
-}
-.comment-c {
-  width: 330px;
-  padding: 10px; 
-}
-.left-margin {
-  margin-left: 10px;
-}
-.label {
-  display: inline-block;
-  color: white;
-  background: #b1aa9a;
-  text-align: center;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 15px;
-  padding-right: 15px;
-  font-size:50%;
-  margin: 5px;
-}
-.score {
-  width: 100px;
-
 }
 .subtotal {
   width: 120px;
@@ -169,35 +134,114 @@ ul {
   font-size: 300%;
   color: black;
 }
-
-.labels {
-  padding: 5px;
-  margin-top: 30px;
-  margin-left: 10px;
+.rate {
+  padding: 30px;
+  padding-top: 10px;
   display: flex;
   flex-wrap: wrap;
 }
-#search-bar {
-  height: 160px;
+.rate-number1 {
+  background-color: #eaf2df;
+  height: 25px;
+  width: 34px;
+  margin-right: 12px;
+  text-align: center;
+  padding-top: 9px;
 }
-#sum {
-  width: 119px;
-  padding: 5px;
-  border-right: 2px;
+.rate-number2 {
+  background-color: #d1c970;
+  height: 25px;
+  width: 34px;
+  margin-right: 12px;
+  text-align: center;
+  padding-top: 9px;
+}
+.rate-number3 {
+  background-color: #f7cf40;
+  height: 25px;
+  width: 34px;
+  margin-right: 12px;
+  text-align: center;
+  padding-top: 9px;
+}
+.rate-number4 {
+  background-color: #de8d6d;
+  height: 25px;
+  width: 34px;
+  margin-right: 12px;
+  text-align: center;
+  padding-top: 9px;
+  color: white;
+}
+.rate-number5 {
+  background-color: #ad4655;
+  height: 25px;
+  width: 34px;
+  margin-right: 12px;
+  text-align: center;
+  padding-top: 9px;
+    color: white;
+ }
+.subtitle {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.left-bar {
+  width: 259px;
   border-right: 1px solid;
 }
-#info {
-  width: 99px;
-  padding: 5px;
-  border-right: 1px solid;
+.right-bar {
+  width: 260px;
+  padding-left: 20px;
 }
-
-#comment {
-  width: 340px;
-  padding: 5px;
+.right-bar h3 {
+  font-size: 90%;
 }
-
-
+.num {
+  font-size: x-large;
+}
+.rate-input {
+  font-size: small;
+  width: 230px;
+  padding-left: 10px;
+}
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.explain {
+  font-size: x-small;
+  padding-left: 10px;
+  width: 210px;
+}
+#course-name {
+  background-color: #e6ddd6;
+    border: 0px;
+    width: 205px;
+    height: 25px;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+#grade {
+  background-color: #e6ddd6;
+    border: 0px;
+    width: 205px;
+    height: 25px;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-left: 0px;
+}
+#major {
+    background-color: #e6ddd6;
+    border: 0px;
+    width: 205px;
+    height: 25px;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-left: 0px;
+}
 #container2 p {
   font-size: 0.6em;
   font-family: arial;
@@ -218,13 +262,25 @@ ul {
   height: 160px;
   z-index: 20;
 }
-#overall {
-  padding: 10px;
-  padding-top: 5px;
-  height: 145px;
-  background-color: #b1aa9a;
-  display: flex;
-  flex-wrap: wrap;
+#right-border {
+  border-right: 1px solid;
 }
-
+#detail {
+    background-color: #e6ddd6;
+    border: 0px;
+    width: 205px;
+    height: 130px;
+    padding-top: 5px;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-left: 0px;
+}
+#rateProfessorBtn {
+  background-color: #ad4655;
+  bottom: 0px;
+  right: 0px;
+  position: absolute;
+  width: 80px;
+  height:  30px;
+}
 

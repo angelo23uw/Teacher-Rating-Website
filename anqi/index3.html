@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!-- hancy July 28-->
+
+<html lang="zh-CN">
+<head>
+  <!-- title of index-->
+  <title>师论--学生自己的教师评价平台</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="教师，评教，国内，学生，教育，大学，课程，学习">
+  <meta name="description" content="为中国学生建立的教师评价系统，只为了更优质的教学资源">
+
+  <!-- the style of index-->
+  <link rel="stylesheet" href="index3.css">
+
+  <!-- the script of index-->
+  <script src="index3.js"></script>
+
+</head>
+<body>
+  <div id="mainContainer">
+  <header>
+    <!-- this is the first block, where we can put the name of professor or the result of search-->
+    <div id="container1">
+      <img src="icon_noperson.jpg" alt="noperson" />
+      <div class="topmargin">
+        <p>教授</p>
+        <h1>Evan McCarty</h1>
+        <p>华盛顿大学<br/>
+        计算机系教授</p>
+      </div>
+    </div>
+    <!-- this is the second block, where it shows a switch bar-->
+    <div id="container2">
+      <div class="switch">
+        <h3>老师</h3>
+        <p>PROFS</p>
+      </div>
+      <div class="switch">
+        <h3>学校</h3>
+        <p>SCHOOL</p>
+      </div>
+      <div class="switch">
+        <h3>评价</h3> 
+        <p>RATE</p>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- here is the third block, where it shows the content of the main page -->
+    <div id="container3">
+      <h3>开始给Evan McCarty教授打分吧</h3>
+      <form action="/submit-rate.php">
+        <div class="rate">
+            <div class="left-bar">
+              <div class="subtitle">
+                <div class="num">1</div>
+                <div class="rate-input">
+                  <p>课程名称</p>
+                  <p class="explain">请保证课程名称正确，否则整条评论可能会被删除。例如：中华文化（艺术篇），信号与系统。</p>
+                  <input type="text" placeholder="请输出课程名称" id="course-name">
+                </div>
+              </div>
+              <div class="subtitle">
+                <div class="num">2</div>
+                <div class="rate-input">
+                  <p>总评分</p>
+                  <div class="wrap">
+                    <div class="rate-number1">1</div>
+                    <div class="rate-number2">2</div>
+                    <div class="rate-number3">3</div>
+                    <div class="rate-number4">4</div>
+                    <div class="rate-number5">5</div>
+                  </div>
+                  <input type="hidden" name="overallrating" value="2">
+                </div>
+              </div>
+              <div class="subtitle">
+                <div class="num">3</div>
+                <div class="rate-input">
+                  <p>难度评分</p>
+                  <div class="wrap">
+                    <div class="rate-number1">1</div>
+                    <div class="rate-number2">2</div>
+                    <div class="rate-number3">3</div>
+                    <div class="rate-number4">4</div>
+                    <div class="rate-number5">5</div>
+                  </div>
+                  <input type="hidden" name="overallrating" value="2">
+                </div>
+              </div>
+              <div class="subtitle">
+                <div class="num">4</div>
+                <div class="rate-input">
+                  <p>是否会再次选择这个课程</p>
+                  <div class="wrap">
+                    <div class="btn" id="right-border">是</div>
+                    <div class="btn">否</div>
+                    <input type="hidden" name="overallrating" value="2">
+                  </div>
+                </div>
+              </div>
+              <div class="subtitle">
+                <div class="num">5</div>
+                <div class="rate-input">
+                  <p>这门课程是否使用教材</p>
+                  <div class="wrap">
+                    <div class="btn" id="right-border">是</div>
+                    <div class="btn">否</div>
+                    <input type="hidden" name="overallrating" value="2">
+                  </div>
+                </div>
+              </div>
+              <div class="subtitle">
+                <div class="num">6</div>
+                <div class="rate-input">
+                  <p>这门课程考勤是否严格</p>
+                  <div class="wrap">
+                    <div class="btn" id="right-border">是</div>
+                    <div class="btn">否</div>
+                    <input type="hidden" name="overallrating" value="2">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right-bar">
+              <div class="subtitle">
+                <div class="num">7</div>
+                <div class="rate-input">
+                  <p>选择最多3个标签来描述老师</p>
+                </div>
+              </div>
+              <div class="subtitle">
+                <div class="num">8</div>
+                <div class="rate-input">
+                  <p>具体评论</p>
+                  <textarea id="detail" name="comments" maxlength="350" placeholder="请输入你对老师的评论"></textarea>
+                </div>
+              </div>
+              <h3>更多信息</h3>
+              <div class="subtitle">
+                <div class="num">9</div>
+                <div class="rate-input">
+                  <p>这门课获得的成绩（可不填）</p>
+                  <input type="text" placeholder="请输入你的成绩" id="grade">
+                </div>
+              </div>
+              <div class="subtitle">
+                <div class="num">9</div>
+                <div class="rate-input">
+                  <p>你的专业是什么（可不填）</p>
+                  <input type="text" placeholder="请输入你的专业" id="major">
+                </div>
+              </div>
+            </div>
+        </div>
+      </form>
+      <!--
+      <input type="submit" id="rateProfessorBtn" name="rateProfessorBtn" class="save" value="Submit">
+    -->
+    </div>
+    <!-- the last container which is like a side bar-->
+    <div id="container4">
+
+    </div>
+  </main>
+  </div>
+</body>
+</html>
