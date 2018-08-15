@@ -60,9 +60,15 @@ ul {
   padding: 0px;
 
 }
+form {
+    display: flex;
+  flex-wrap: wrap;
+}
 #container3 h3{
   padding-left: 20px;
   color: #ad4655;
+  margin-top:0px;
+  padding-top: 20px;
 }
 #container1 {
   width: 590px;
@@ -195,8 +201,12 @@ ul {
   width: 260px;
   padding-left: 20px;
 }
-.right-bar h3 {
+#moreinfo {
+  padding-left: 10px;
+  color: #ad4655;
   font-size: 90%;
+  margin-top: 0px;
+  padding-top: 10px;
 }
 .num {
   font-size: x-large;
@@ -214,6 +224,42 @@ ul {
   font-size: x-small;
   padding-left: 10px;
   width: 210px;
+}
+.label {
+  display: inline-block;
+  color: white;
+  background: #b1aa9a;
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size:50%;
+  margin: 5px;
+}
+.labels {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tips {
+  background-color: #b1aa9a;
+  width: 230px;
+  height: fit-content;
+  z-index: 20;
+  padding-left: 13px;
+  padding-right: 7px;
+  padding-bottom: 20px;
+  color: #e6ddd6;
+}
+.tips h3 {
+  color: #ad4655;
+  margin-bottom: 5px;
+  margin-top: 0px;
+  padding-top: 18px;
+}
+.before-submit {
+  padding-left: 10px;
+  color: #b1aa9a;
 }
 #course-name {
   background-color: #e6ddd6;
@@ -257,11 +303,11 @@ ul {
 }
 
 #container4 {
-  text-align: center;
   width: 250px;
   height: 160px;
   z-index: 20;
 }
+
 #right-border {
   border-right: 1px solid;
 }
@@ -269,18 +315,38 @@ ul {
     background-color: #e6ddd6;
     border: 0px;
     width: 205px;
-    height: 130px;
+    height: 100px;
     padding-top: 5px;
     padding-left: 10px;
     margin-top: 5px;
     margin-left: 0px;
 }
+#rate10 {
+  padding-left: 5px;
+}
+#num10 {
+  font-size: 110%
+}
+#submit {
+  background-color: white;
+  width: 250px;
+  text-align: center;
+  height: fit-content;
+  font-size: xx-large;
+  margin-top: 10px;
+}
+#submit p {
+  font-size: large;
+  color: #ad4655;
+}
 #rateProfessorBtn {
-  background-color: #ad4655;
-  bottom: 0px;
-  right: 0px;
-  position: absolute;
-  width: 80px;
-  height:  30px;
+    background-color: #ad4655;
+    border: 0px;
+    align-self: center;
+    height: 40px;
+    width: 140px;
+    font-size: x-large;
+    color: white;
+    margin-top: 15px;
 }
 
