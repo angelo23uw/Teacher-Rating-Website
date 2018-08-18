@@ -99,7 +99,7 @@
         </div>
       </div>
 
-
+      <!-- bug: while up to 2 comments, the division will be unsorted and not clear-->
       <?php
       //query for professor rate info
       $id= $row['id'];
