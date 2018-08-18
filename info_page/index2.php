@@ -18,6 +18,33 @@
 
 </head>
 <body>
+  <!-- starts php-->
+  <?php
+    //get the target professor and also make sure it exists;
+    //
+    //$prof_name= $_POST['prof_name'];
+    //if(!$prof_name){
+    //  echo "错误：暂时没有此教授的信息。";
+    //  exit;
+    //}
+
+    //connect to database and also check whether error exists
+    $db=@ mysqli_connect('localhost','root','rhx1198129562+','web')
+    or die ('unable to connect to server');
+    mysqli_query($db, "set names utf8");
+    if(mysqli_connect_errno()){
+      echo 'Error: could not connect to database';
+      exit;
+    }
+
+    //query for professor main info
+    $sq= "select * from main_info";
+    $result1= mysqli_query($db, $sq);
+    //here shoule add some fun for the searching query to get the target professor
+    $row= mysqli_fetch_assoc($result1);
+
+
+  ?>
   <div id="mainContainer">
   <header>
     <!-- this is the first block, where we can put the name of professor or the result of search-->
@@ -25,9 +52,8 @@
       <img src="icon_noperson.jpg" alt="noperson" />
       <div class="topmargin">
         <p>教授</p>
-        <h1>Evan McCarty</h1>
-        <p>华盛顿大学<br/>
-        计算机系教授</p>
+        <h1><?php echo $row['name']; ?></h1>
+        <p><?php echo $row['school']; ?><br/><?php echo $row['major']; ?></p>
       </div>
     </div>
     <!-- this is the second block, where it shows a switch bar-->
@@ -41,7 +67,7 @@
         <p>SCHOOL</p>
       </div>
       <div class="switch">
-        <h3>评价</h3> 
+        <h3>评价</h3>
         <p>RATE</p>
       </div>
     </div>
@@ -59,7 +85,8 @@
           </span>
         </div>
       </div>
-      <!-- the filter bar-->
+
+      <!-- the sorting bar-->
       <div class="filter">
       	<div id="sum">
       		<p>总评价</p>
@@ -72,61 +99,84 @@
         </div>
       </div>
 
+
+      <?php
+      //query for professor rate info
+      $id= $row['id'];
+      $id_sq= "select * from ".$id."_rate_info";
+      $result2= mysqli_query($db, $id_sq);
+      $rate_row_num= mysqli_num_rows($result2);
+      for($i=0; $i< $rate_row_num; $i++){
+        $rate_row= mysqli_fetch_assoc($result2);
+         ?>
+      <!-- starts one rate container-->
       <div class="comments-container">
         <ul>
           <li>
             <div class="comment">
               <div class="sum-c">
-                <div class="time"><p>2017/12/13</p></div>
+                <div class="time"><p><?php echo $rate_row['r_date'] ?></p></div>
                 <p><img src="sadface.jpg" alt="bad" />
+
+                <!--here should add a php fun for determining whether the professor is good or not
+                    now, we need a rate table-->
                 <span class="left-margin">不行</span><p>
-                <p><span class="number">2.0</span><span class="left-margin">总评分</span></p>
-                <p><span class="number">4.0</span><span class="left-margin">难度评分</span></p>
+                <p><span class="number"><?php echo $rate_row['rate'] ?></span><span class="left-margin">总评分</span></p>
+                <p><span class="number"><?php echo $rate_row['hardness'] ?></span><span class="left-margin">难易程度</span></p>
               </div>
               <div class="info-c">
-                <p>CSE373</p>
+                <p><?php echo $rate_row['class_info'] ?></p>
                 <br /><br />
-                <p>学分：有</p>
-                <p>考勤：需要签到</p>
+                <p>学分: <?php echo $rate_row['credit'] ?></p>
+                <p>考勤: <?php echo $rate_row['is_attend'] ?></p>
                 <br />
-                <p>教材使用与否：否</p>
-                <p>该课程成绩：A</p>
+                <p>该课程成绩: <?php echo $rate_row['grade'] ?></p>
               </div>
               <div class="comment-c">
-                <div class="label">平易近人</div>
-                <p>课程工作繁重，代码很有趣，他的编码和脚本都很有趣，随时准备讨论要点
-                所设计的主题和软件开发面试题极其相关。非常有用，关注数据结构和运行时理论。
-                evan是研究生中级讲师，他的截止日期通常比较晚，而且他的联系教材很少，整体很好</p>
+                <div class="label"><?php echo $rate_row['tag1'] ?></div>
+                <p><?php echo $rate_row['comment'] ?></p>
               </div>
             </div>
           </li>
         </ul>
       </div>
+      <?php } ?>
+      <!-- ends one rate container-->
+
     </div>
+
+
+
     <!-- the last container which is like a side bar-->
     <div id="container4">
       <div id="overall">
       	<div class="score">
-      		<p>总评分<br >
-      		<span class="bignumber">4.0</span>
+      		<p>最终评分<br >
+      		<span class="bignumber"><?php echo $row['main_rate']; ?></span>
       		</p>
-      	</div> 
+      	</div>
       	<div class="subtotal">
       		<p>
       			是否还会选择这位老师<br />
       			<span class="less-big-number">N/A</span>
-      			<br />难易评分<br>
-      			<span class="less-big-number">3.0</span>
-      		</p>	      	
+      			<br />难易程度<br>
+      			<span class="less-big-number"><?php echo $row['main_hardness']; ?></span>
+      		</p>
       	</div>
       </div>
       <div class="labels">
-      	<div class="label">平易近人</div>
-      	<div class="label">令人尊敬</div>
-      	<div class="label">风趣幽默</div>
+      	<div class="label"><?php echo $row['main_tag1'] ?></div>
+      	<div class="label"><?php echo $row['main_tag2'] ?></div>
+      	<div class="label"><?php echo $row['main_tag3'] ?></div>
       </div>
     </div>
   </main>
   </div>
+  <?php
+  //free result and close DB
+  mysqli_free_result($result1);
+  mysqli_free_result($result2);
+  mysqli_close($db);
+  ?>
 </body>
 </html>
