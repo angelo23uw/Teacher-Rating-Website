@@ -30,7 +30,7 @@
     <!-- ends header-->
 
     <!-- starts central content-->
-    <div class="centerContent" id="center">
+    <div class="centerContent">
       <div class="maintitle">
         <p>师&nbsp;&nbsp;论</p>
       </div>
@@ -38,15 +38,20 @@
         <p>学生自己的教师评价平台</p>
       </div>
       <div class="description">
-        <p id="yvm">YOUR VOICE MATTERS</p>
+        <p class="margin-zero">SIGN IN</p>
       </div>
-      <div class="mainButton" id="main-buttons">
-        <div class="searchButton">
-          <a href="#" class="searchSchool" id="searchTeacher">搜索老师</a>
+      <form action="search.php">
+        <div class="input-container">
+          <img src="location.jpg" alt="loc" />
+          <input type="text" name="school" class="input-text" placeholder="请输入你的学校" />
         </div>
-        <div class="rateButton">
-          <a href="#" class="rateTeacher" id="rateTeacher">评价老师</a>
+        <div class="input-container">
+          <img src="teacher.jpg" alt="tea" />
+          <input type="text" name="teacher" class="input-text"  placeholder="请输入你的老师" />
         </div>
+        <input type="submit" class="search-btn" value="搜索" />
+
+      </form>
       </div>
     </div>
     <!--ends central content-->

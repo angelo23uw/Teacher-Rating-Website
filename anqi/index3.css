@@ -146,48 +146,71 @@ form {
   display: flex;
   flex-wrap: wrap;
 }
-.rate-number1 {
-  background-color: #eaf2df;
+.rate-number {
+  background-color: #e6ddd6;
   height: 25px;
   width: 34px;
   margin-right: 12px;
   text-align: center;
   padding-top: 9px;
+}
+/*    this is the hover effect of the number selection    */
+#num1-1:hover {
+  background-color: #eaf2df;
+}
+#num2-1:hover {
+  background-color: #d1c970;
+}
+#num3-1:hover {
+  background-color: #f7cf40;
+}
+#num4-1:hover {
+  background-color: #de8d6d;
+  color: white;
+}
+#num5-1:hover {
+  background-color: #ad4655;
+  color: white;
+}
+/*    this is the hover effect of the number selection    */
+#num1-2:hover {
+  background-color: #eaf2df;
+}
+#num2-2:hover {
+  background-color: #d1c970;
+}
+#num3-2:hover {
+  background-color: #f7cf40;
+}
+#num4-2:hover {
+  background-color: #de8d6d;
+  color: white;
+}
+#num5-2:hover {
+  background-color: #ad4655;
+  color: white;
+}
+
+.rate-number1 {
+  background-color: #eaf2df;
 }
 .rate-number2 {
   background-color: #d1c970;
-  height: 25px;
-  width: 34px;
-  margin-right: 12px;
-  text-align: center;
-  padding-top: 9px;
 }
 .rate-number3 {
   background-color: #f7cf40;
-  height: 25px;
-  width: 34px;
-  margin-right: 12px;
-  text-align: center;
-  padding-top: 9px;
 }
 .rate-number4 {
   background-color: #de8d6d;
-  height: 25px;
-  width: 34px;
-  margin-right: 12px;
-  text-align: center;
-  padding-top: 9px;
   color: white;
 }
 .rate-number5 {
   background-color: #ad4655;
-  height: 25px;
-  width: 34px;
-  margin-right: 12px;
-  text-align: center;
-  padding-top: 9px;
-    color: white;
+  color: white;
  }
+.label:hover {
+  background-color: #ad4655;
+}
 .subtitle {
   display: flex;
   flex-wrap: wrap;
@@ -261,6 +284,10 @@ form {
   padding-left: 10px;
   color: #b1aa9a;
 }
+.selected {
+  background-color: #ad4655;
+  color: white;
+ }
 #course-name {
   background-color: #e6ddd6;
     border: 0px;
@@ -308,8 +335,38 @@ form {
   z-index: 20;
 }
 
-#right-border {
+#reselect-1 {
   border-right: 1px solid;
+}
+#reselect-1:hover {
+  background-color: #ad4655;
+  color: white;
+}
+#reselect-2:hover {
+  background-color: #ad4655;
+  color: white;
+}
+#textbook-1 {
+  border-right: 1px solid;
+}
+#textbook-1:hover {
+  background-color: #ad4655;
+  color: white;
+}
+#textbook-2:hover {
+  background-color: #ad4655;
+  color: white;
+}
+#attendence-1 {
+  border-right: 1px solid;
+}
+#attendence-1:hover {
+  background-color: #ad4655;
+  color: white;
+}
+#attendence-2:hover {
+  background-color: #ad4655;
+  color: white;
 }
 #detail {
     background-color: #e6ddd6;
