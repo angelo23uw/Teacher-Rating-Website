@@ -1,4 +1,4 @@
-"use strict";
+
 window.onload = function() {
 	$("searchTeacher").onclick = searchTeacher;
 	$("rateTeacher").onclick = rateTeacher;
@@ -14,7 +14,10 @@ function searchTeacher() {
 	let input1 = document.createElement("input");
 	let input2 = document.createElement("input");
 	let input3 = document.createElement("input");
+
+	//here shoule add a php file
 	form.action = "search.php";
+
 	div1.classList.toggle("input-container");
 	div2.classList.toggle("input-container");
 	img1.src = "location.jpg";

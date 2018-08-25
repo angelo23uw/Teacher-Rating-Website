@@ -18,9 +18,11 @@
 
 </head>
 <body>
+
+
   <div id="mainContainer">
   <header>
-    <!-- this is the first block, where we can put the name of professor or the result of search-->
+    <!-- starts the intro block-->
     <div id="container1">
       <img src="icon_noperson.jpg" alt="noperson" />
       <div class="topmargin">
@@ -30,7 +32,9 @@
         计算机系教授</p>
       </div>
     </div>
-    <!-- this is the second block, where it shows a switch bar-->
+    <!-- ends the intro block-->
+
+    <!-- starts the switch block-->
     <div id="container2">
       <div class="switch">
         <h3>老师</h3>
@@ -41,25 +45,29 @@
         <p>SCHOOL</p>
       </div>
       <div class="switch">
-        <h3>评价</h3> 
+        <h3>评价</h3>
         <p>RATE</p>
       </div>
     </div>
+    <!-- ends the switch block-->
   </header>
-  <main>
-    <!-- here is the third block, where it shows the content of the main page -->
-    <form action="/submit-rate.php">
-    <div id="container3">
-      <h3>开始给Evan McCarty教授打分吧</h3>
 
+  <!-- starts the main content  (also the rate block)-->
+  <main>
+    <!-- start the form -->
+    <form action="submit-rate.php">
+      <div id="container3">
+        <h3>开始给Evan McCarty教授打分吧</h3>
         <div class="rate">
+
             <div class="left-bar">
               <div class="subtitle">
                 <div class="num">1</div>
                 <div class="rate-input">
                   <p>课程名称</p>
                   <p class="explain">请保证课程名称正确，否则整条评论可能会被删除。例如：中华文化（艺术篇），信号与系统。</p>
-                  <input type="text" name="course-name" placeholder="请输出课程名称" id="course-name">
+                  <input type="text" name="course-name" placeholder="请输出课程名称" id="course-name"
+                  onkeypress="change_input_color(this.id)" onkeyup="unchange_input_color(this.id)">
                 </div>
               </div>
               <div class="subtitle">
@@ -144,7 +152,7 @@
                     <input type="hidden" name="vivid" id="vi" value="">
                     <div class="label" id="feedback">反馈及时</div>
                     <input type="hidden" name="feedback" id="fb" value="no">
-                  </div>                  
+                  </div>
                 </div>
               </div>
               <div class="subtitle">
@@ -159,21 +167,23 @@
                 <div class="num">9</div>
                 <div class="rate-input">
                   <p>这门课获得的成绩（可不填）</p>
-                  <input type="text" placeholder="请输入你的成绩" id="grade">
+                  <input type="text" placeholder="请输入你的成绩" id="grade"
+                  onkeypress="change_input_color(this.id)" onkeyup="unchange_input_color(this.id)">
                 </div>
               </div>
               <div class="subtitle">
                 <div class="num" id="num10">10</div>
                 <div class="rate-input" id="rate10">
                   <p>你的专业是什么（可不填）</p>
-                  <input type="text" placeholder="请输入你的专业" id="major">
+                  <input type="text" placeholder="请输入你的专业" id="major"
+                  onkeypress="change_input_color(this.id)" onkeyup="unchange_input_color(this.id)">
                 </div>
               </div>
             </div>
         </div>
 
-    
-      
+
+
     </div>
     <!-- the last container which is like a side bar-->
     <div id="container4">

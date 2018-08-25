@@ -11,7 +11,7 @@ window.onload = function() {
 	$("num2-2").onclick = rate22;
 	$("num3-2").onclick = rate32;
 	$("num4-2").onclick = rate42;
-	$("num5-2").onclick = rate52;	
+	$("num5-2").onclick = rate52;
 	$("reselect-1").onclick = reselectyes;
 	$("reselect-2").onclick = reselectno;
 	$("textbook-1").onclick = textbookyes;
@@ -28,7 +28,7 @@ window.onload = function() {
 
 }
 
-// this is the overall rating 
+// this is the overall rating
 
 function rate11() {
 	changecolor(1,1);
@@ -108,7 +108,7 @@ function easygoing() {
 		$("eg").value = "yes";
 	} else {
 		$("eg").value = "no";
-	}	
+	}
 }
 
 function respectful() {
@@ -214,6 +214,16 @@ function changerate(num,row) {
 		}
 	}
 }
+
+//the function used to change and unchange color of when pressing or not
+function change_input_color(id){
+	$(id).style.backgroundColor= "#d9d0ca";
+}
+function unchange_input_color(id){
+	$(id).style.backgroundColor= "#e6ddd6";
+}
+
+
 
 function $(id) {
   return document.getElementById(id);
