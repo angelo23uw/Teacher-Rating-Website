@@ -119,7 +119,7 @@ form {
   margin: 0px;
   background-color: #e6ddd6;
 }
-.listdown { 
+.listdown {
   width: 220px;
   text-align: center;
   padding-top: 7px;
@@ -129,6 +129,7 @@ form {
   border: 0px;
   border-radius: 0px;
   height: 32px;
+  outline: none;
 }
 .number {
   font-size: large;

@@ -123,7 +123,7 @@
                 <div class="num">4</div>
                 <div class="rate-input">
                   <p>这门课程的学分数量</p>
-                    <select name="credit" class="listdown" form="form" id="credit">
+                    <select name="credit" class="listdown" id="credit">
                       <option value="0">0</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
@@ -183,7 +183,7 @@
                     <div class="num">8</div>
                     <div class="rate-input">
                       <p>这门课获得的成绩（可不填）</p>
-                        <select name="grade" class="listdown" form="form" id="grade">
+                        <select name="grade" class="listdown" id="grade">
                           <option value="">无</option>
                           <option value="A">A(90-100)</option>
                           <option value="B">B(80-90)</option>
