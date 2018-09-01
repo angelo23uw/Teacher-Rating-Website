@@ -23,10 +23,14 @@ div.container{
   margin-right: 15%;
   box-shadow: 20px 20px 50px 15px grey;
   position: absolute;
+  border-radius: 25px;
 }
 header{
   background: #a64b54;
+  background-image: linear-gradient(#b04f59,#a64b54);
   height: 40px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
 }
 header a{
   text-decoration: none;
@@ -52,6 +56,14 @@ div.maintitle{
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 50px;
   font-weight: bold;
+}
+#title{
+  text-decoration: none;
+  color: #404040;
+}
+#title:hover{
+  color: #808080;
+  text-shadow: 0 0 60px #cccccc;
 }
 div.subtitle{
   position: relative;
@@ -79,6 +91,10 @@ a.searchSchool{
   background-color: #a64b54;
   padding: 10px 30px;
 }
+.searchSchool:hover{
+  box-shadow: 5px 5px 30px 5px grey;
+  background-color: #ba5e68;
+}
 a.rateTeacher{
   position: relative;
   top: 70px;
@@ -88,15 +104,18 @@ a.rateTeacher{
   background-color: #a64b54;
   padding: 10px 30px;
 }
-
+.rateTeacher:hover{
+  box-shadow: 5px 5px 30px 5px grey;
+  background-color: #ba5e68;
+}
 .input-container {
-  margin-left: 275px;
+  margin: auto;
+  margin-bottom: 20px;
   width:250px;
   border-bottom: 1px solid;
   align-self: center;
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 20px;
 }
 .margin-zero {
   margin-bottom: 0px;
@@ -109,7 +128,11 @@ a.rateTeacher{
   border: none;
   padding-left: 20px;
   font-size: large;
-  color: #77736f;
+  color: #696663;
+  outline: none;
+}
+.input-text::placeholder{
+  color: #9c9996;
 }
 .search-btn {
   margin-top: 10px;
@@ -118,6 +141,15 @@ a.rateTeacher{
   height: 40px;
   background-color: #ad4655;
   color: white;
+  outline: none;
+}
+.search-btn:hover{
+  border: 2px solid #ba5e68;
+  box-shadow: 5px 5px 30px 5px grey;
+  background-color: #ba5e68;
+}
+.search-btn:active{
+  background-color: #a14550;
 }
 footer{
   position: relative;
