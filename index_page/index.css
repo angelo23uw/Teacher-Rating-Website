@@ -147,7 +147,7 @@ a.rateTeacher{
 .search-btn:hover{
   border: 1px solid #a6a6a6;
   box-shadow: 5px 5px 30px 5px grey;
-  background-image: linear-gradient(-45deg, #3399ff, #66ff66);
+  background-image: linear-gradient(-45deg, #ff9999, #9966ff);
 }
 .search-btn:active{
   background-color: #a14550;
