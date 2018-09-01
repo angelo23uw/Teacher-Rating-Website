@@ -94,7 +94,7 @@ a.searchSchool{
 }
 .searchSchool:hover{
   box-shadow: 5px 5px 30px 5px grey;
-  background-color: #ba5e68;
+  background-image: linear-gradient(-45deg, #33ccff, #ff3399);
 }
 a.rateTeacher{
   position: relative;
@@ -107,7 +107,7 @@ a.rateTeacher{
 }
 .rateTeacher:hover{
   box-shadow: 5px 5px 30px 5px grey;
-  background-color: #ba5e68;
+  background-image: linear-gradient(-45deg, #33ccff, #ff3399);
 }
 .input-container {
   margin: auto;
@@ -145,9 +145,9 @@ a.rateTeacher{
   outline: none;
 }
 .search-btn:hover{
-  border: 2px solid #ba5e68;
+  border: 1px solid #a6a6a6;
   box-shadow: 5px 5px 30px 5px grey;
-  background-color: #ba5e68;
+  background-image: linear-gradient(-45deg, #3399ff, #66ff66);
 }
 .search-btn:active{
   background-color: #a14550;
