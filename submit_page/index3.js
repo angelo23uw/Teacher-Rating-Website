@@ -24,7 +24,7 @@ window.onload = function() {
 
 }
 
-// this is the overall rating 
+// this is the overall rating
 
 function rate11() {
 	changecolor(1,1);
@@ -104,7 +104,7 @@ function easygoing() {
 		$("eg").value = "yes";
 	} else {
 		$("eg").value = "no";
-	}	
+	}
 }
 
 function respectful() {

@@ -62,8 +62,9 @@ div.maintitle{
   color: #404040;
 }
 #title:hover{
-  color: #808080;
-  text-shadow: 0 0 60px #cccccc;
+  background: -webkit-linear-gradient(-45deg, #ffa366, #66a3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 div.subtitle{
   position: relative;
