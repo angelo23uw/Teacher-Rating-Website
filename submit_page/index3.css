@@ -118,6 +118,7 @@ form {
   padding-bottom: 7px;
   margin: 0px;
   background-color: #e6ddd6;
+  cursor: pointer;
 }
 .listdown {
   width: 220px;
@@ -130,6 +131,11 @@ form {
   border-radius: 0px;
   height: 32px;
   outline: none;
+  color: #b0aa9c;
+  font-size: 15px;
+}
+.listdown option{
+  background-color: #e6ddd6;
 }
 .number {
   font-size: large;
@@ -164,64 +170,97 @@ form {
   margin-right: 12px;
   text-align: center;
   padding-top: 9px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.rate-number .main_rate_hint{
+  visibility: hidden;
+  width: 50px;
+  background: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  top: 130%;
+  left: 50%;
+  margin-left: -35px;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+.rate-number .main_rate_hint::after{
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+.rate-number:hover .main_rate_hint{
+  visibility: visible;
+  opacity: 0.7;
 }
 /*    this is the hover effect of the number selection    */
 #num1-1:hover {
-  background-color: #eaf2df;
+  background-color: #ccff66;
 }
 #num2-1:hover {
-  background-color: #d1c970;
+  background-color: #ffcc99;
 }
 #num3-1:hover {
-  background-color: #f7cf40;
+  background-color: #ff99cc;
 }
 #num4-1:hover {
-  background-color: #de8d6d;
+  background-color: #cc99ff;
   color: white;
 }
 #num5-1:hover {
-  background-color: #ad4655;
+  background-color: #99ccff;
   color: white;
 }
 /*    this is the hover effect of the number selection    */
 #num1-2:hover {
-  background-color: #eaf2df;
+  background-color: #ccff66;
 }
 #num2-2:hover {
-  background-color: #d1c970;
+  background-color: #ffcc99;
 }
 #num3-2:hover {
-  background-color: #f7cf40;
+  background-color: #ff99cc;
 }
 #num4-2:hover {
-  background-color: #de8d6d;
+  background-color: #cc99ff;
   color: white;
 }
 #num5-2:hover {
-  background-color: #ad4655;
+  background-color: #99ccff;
   color: white;
 }
-
+/*   colors when active one button*/
 .rate-number1 {
-  background-color: #eaf2df;
+  background-color: #ccff66;
 }
 .rate-number2 {
-  background-color: #d1c970;
+  background-color: #ffcc99;
 }
 .rate-number3 {
-  background-color: #f7cf40;
+  background-color: #ff99cc;
 }
 .rate-number4 {
-  background-color: #de8d6d;
+  background-color: #cc99ff;
   color: white;
 }
 .rate-number5 {
-  background-color: #ad4655;
+  background-color: #99ccff;
   color: white;
  }
-.label:hover {
-  background-color: #ad4655;
-}
+
+
+
 .subtitle {
   display: flex;
   flex-wrap: wrap;
@@ -258,6 +297,8 @@ form {
   padding-left: 10px;
   width: 210px;
 }
+
+
 .label {
   display: inline-block;
   color: white;
@@ -269,11 +310,39 @@ form {
   padding-right: 15px;
   font-size:50%;
   margin: 5px;
+  cursor: pointer;
+}
+.label:hover {
+  background-color: #ff6666;
 }
 .labels {
   display: flex;
   flex-wrap: wrap;
 }
+/* selected label*/
+.selected-label {
+  background-color: #ff5050;
+  color: white;
+ }
+/*unselected label*/
+.unselected-label{
+  display: inline-block;
+  color: white;
+  background: #b1aa9a;
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size:50%;
+  margin: 5px;
+  cursor: default;
+}
+.unselected-label:hover{
+  background-color: #b1aa9a;
+}
+
+
 .tips {
   background-color: #b1aa9a;
   width: 230px;
@@ -294,10 +363,14 @@ form {
   padding-left: 10px;
   color: #b1aa9a;
 }
-.selected {
-  background-color: #ad4655;
+
+
+ /* selected button on attendence*/
+.selected-btn {
+  background-color: #ff9933;
   color: white;
- }
+}
+
 #course-name {
   background-color: #e6ddd6;
     border: 0px;
@@ -306,6 +379,11 @@ form {
     padding-left: 10px;
     margin-top: 5px;
     margin-left: 5px;
+    outline-color: #c0b2a5;
+}
+#course-name::placeholder{
+  color: #9c9996;
+  opacity: 0.7;
 }
 #major {
     background-color: #e6ddd6;
@@ -336,64 +414,16 @@ form {
   z-index: 20;
 }
 
-#reselect-1 {
-<<<<<<< HEAD
-  border-right: 1px solid;
-}
-#reselect-1:hover {
-  background-color: #ad4655;
-  color: white;
-}
-#reselect-2:hover {
-  background-color: #ad4655;
-  color: white;
-}
-#textbook-1 {
-  border-right: 1px solid;
-}
-#textbook-1:hover {
-  background-color: #ad4655;
-  color: white;
-}
-#textbook-2:hover {
-  background-color: #ad4655;
-  color: white;
-}
+
 #attendence-1 {
   border-right: 1px solid;
 }
-=======
-  border-right: 1px solid;
-}
-#reselect-1:hover {
-  background-color: #ad4655;
-  color: white;
-}
-#reselect-2:hover {
-  background-color: #ad4655;
-  color: white;
-}
-#textbook-1 {
-  border-right: 1px solid;
-}
-#textbook-1:hover {
-  background-color: #ad4655;
-  color: white;
-}
-#textbook-2:hover {
-  background-color: #ad4655;
-  color: white;
-}
-#attendence-1 {
-  border-right: 1px solid;
-}
->>>>>>> 16306c2872a4f6c9666d9355fc71702baf968152
 #attendence-1:hover {
-  background-color: #ad4655;
+  background-color: #ffdd99;
   color: white;
 }
 #attendence-2:hover {
-  background-color: #ad4655;
+  background-color: #ffbb99;
   color: white;
 }
 #detail {
@@ -406,6 +436,11 @@ form {
     margin-top: 5px;
     margin-left: 0px;
     resize: none;
+    outline-color: #c0b2a5;
+}
+#detail::placeholder{
+  color: #9c9996;
+  opacity: 0.7;
 }
 #rate10 {
   padding-left: 5px;
@@ -421,17 +456,40 @@ form {
   font-size: xx-large;
   margin-top: 10px;
 }
-#submit p {
-  font-size: large;
-  color: #ad4655;
-}
 #rateProfessorBtn {
-    background-color: #ad4655;
-    border: 0px;
+    background-color: #b0aa9c;
+    border: 2px solid #ad4655;
     align-self: center;
     height: 40px;
     width: 140px;
     font-size: x-large;
     color: white;
     margin-top: 15px;
+    border-radius: 10px;
+    transition: 0.5s;
+    outline: none;
+}
+#rateProfessorBtn:hover{
+  background-color: #a24d57;
+  box-shadow: 5px 5px 10px grey;
+}
+#rateProfessorBtn:active{
+  box-shadow: 3px 3px 8px grey;
+  transform: translate(2px, 2px);
+}
+#return{
+  padding-top: 10px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+#return > a{
+  text-decoration: none;
+  color: #a24d57;
+  font-size: 18px;
+}
+#return > a > div{
+  cursor: pointer;
+}
+#return > a > div:hover{
+  opacity: 0.6;
 }

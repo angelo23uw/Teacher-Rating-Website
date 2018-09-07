@@ -19,6 +19,17 @@
 <body>
   <!-- starts the php-->
   <?php
+  $name= $_REQUEST['name'];
+  $school= $_REQUEST['school'];
+  if(!$name and !$school){
+    echo "no data passed";
+    exit;
+  }
+  if(!$name or !$school){
+    echo "data not enough";
+    exit;
+  }
+
   $db= @mysqli_connect('localhost', 'root', '', 'web')
   or die ('unable to connect to the server');
   mysqli_query($db, 'set names utf8');
@@ -26,7 +37,8 @@
     echo 'Error: could not connect to database';
     exit;
   }
-  $sq= "select * from main_info";
+
+  $sq= "select * from main_info where name= '$name' and school= '$school'";
   $result= mysqli_query($db, $sq);
   $row = mysqli_fetch_assoc($result);
   ?>
@@ -39,7 +51,7 @@
       <div id="container1">
         <img src="icon_noperson.jpg" alt="noperson" />
         <div class="topmargin">
-          <p>教授</p>
+          <p>教授:</p>
           <h1><?php echo $row['name'] ?></h1>
           <p><?php echo $row['school'] ?><br/><?php echo $row['major'] ?></p>
         </div>
@@ -69,6 +81,7 @@
     <main>
       <!-- start the form -->
       <form action="submit.php"  method="post" id="form">
+        <input type="hidden" name="id" value=<?php echo $row['id']; ?>>
         <!-- starts the rate block-->
         <div id="container3">
           <h3>开始给 <?php echo $row['name'] ?> 教授打分吧</h3>
@@ -81,7 +94,7 @@
                 <div class="rate-input">
                   <p>课程名称</p>
                   <p class="explain">请保证课程名称正确，否则整条评论可能会被删除。例如：中华文化（艺术篇），信号与系统。</p>
-                  <input type="text" name="class_info" placeholder="请输出课程名称" id="course-name"
+                  <input type="text" name="class_info" placeholder="请写出课程名称" id="course-name" autocomplete="off" autofocus="on"
                   onkeypress="change_input_color(this.id)" onkeyup="unchange_input_color(this.id)">
                 </div>
               </div>
@@ -95,13 +108,46 @@
 
                   <!-- here should be a multi-options with form type-->
                   <div class="wrap">
-                    <div class="rate-number" id="num1-1">1</div>
-                    <div class="rate-number" id="num2-1">2</div>
-                    <div class="rate-number" id="num3-1">3</div>
-                    <div class="rate-number" id="num4-1">4</div>
-                    <div class="rate-number" id="num5-1">5</div>
-                  </div>
+                    <div class="rate-number" id="num1-1">
+                      1
+                      <span class="main_rate_hint" style="width: 80px; margin-left: -50px">
+                        发展空间很大
+                        <img src="sad.png" alt="verysad" style="width: 20px">
+                      </span>
+                    </div>
+                    <div class="rate-number" id="num2-1">
+                      2
+                      <span class="main_rate_hint" style="width: 60px; margin-left: -40px">
+                        有待努力
+                        <img src="sad.png" alt="sad" style="width: 20px">
+                      </span>
 
+                    </div>
+                    <div class="rate-number" id="num3-1">
+                      3
+                      <span class="main_rate_hint">
+                        不算亏
+                        <img src="normal.png" alt="normal" style="width: 20px">
+                      </span>
+
+                    </div>
+                    <div class="rate-number" id="num4-1">
+                      4
+                      <span class="main_rate_hint">
+                        来对了
+                        <img src="smile.png" alt="good" style="width: 20px">
+                      </span>
+
+                    </div>
+                    <div class="rate-number" id="num5-1">
+                      5
+                      <span class="main_rate_hint">
+                        太棒了
+                        <img src="smile.png" alt="excellent" style="width: 20px">
+                      </span>
+
+                    </div>
+                  </div>
                   <input type="hidden" id="overallrating" name="overallrating">
                 </div>
               </div>
@@ -110,11 +156,26 @@
                 <div class="rate-input">
                   <p>难度评分</p>
                   <div class="wrap">
-                    <div class="rate-number" id="num1-2">1</div>
-                    <div class="rate-number" id="num2-2">2</div>
-                    <div class="rate-number" id="num3-2">3</div>
-                    <div class="rate-number" id="num4-2">4</div>
-                    <div class="rate-number" id="num5-2">5</div>
+                    <div class="rate-number" id="num1-2">
+                      1
+                      <span class="main_rate_hint">简单</span>
+                    </div>
+                    <div class="rate-number" id="num2-2">
+                      2
+                      <span class="main_rate_hint">较简单</span>
+                    </div>
+                    <div class="rate-number" id="num3-2">
+                      3
+                      <span class="main_rate_hint">一般</span>
+                    </div>
+                    <div class="rate-number" id="num4-2">
+                      4
+                      <span class="main_rate_hint">较困难</span>
+                    </div>
+                    <div class="rate-number" id="num5-2">
+                      5
+                      <span class="main_rate_hint">很难</span>
+                    </div>
                   </div>
                   <input type="hidden" id="hard-degree" name="hard-degree">
                 </div>
@@ -152,22 +213,37 @@
                   <div class="subtitle">
                     <div class="num">6</div>
                     <div class="rate-input">
-                      <p>选择最多3个标签来描述老师</p>
+                      <p>选择最多3个标签来描述老师<br>
+                        <b>(注意:多出的标签将不会被录入)</b></p>
                       <div class="labels">
-                        <div class="label" id="easygoing">平易近人</div>
-                        <input type="hidden" name="平易近人" id="eg" value="no">
-                        <div class="label" id="respectful">令人尊敬</div>
-                        <input type="hidden" name="令人尊敬" id="rp" value="no">
-                        <div class="label" id="humorous">风趣幽默</div>
-                        <input type="hidden" name="风趣幽默" id="hu" value="no">
-                        <div class="label" id="demanding">作业繁重</div>
-                        <input type="hidden" name="作业繁重" id="dm" value="no">
-                        <div class="label" id="inspiring">富有灵感</div>
-                        <input type="hidden" name="富有灵感" id="is" value="no">
-                        <div class="label" id="vivid">讲课生动</div>
-                        <input type="hidden" name="讲课生动" id="vi" value="">
-                        <div class="label" id="feedback">反馈及时</div>
-                        <input type="hidden" name="反馈及时" id="fb" value="no">
+                        <div class="label" id="easygoing">
+                          平易近人
+                          <input type="hidden" name="easygoing" id="eg">
+                        </div>
+                        <div class="label" id="respectful">
+                          令人尊敬
+                          <input type="hidden" name="respectful" id="rp">
+                        </div>
+                        <div class="label" id="humorous">
+                          风趣幽默
+                          <input type="hidden" name="humorous" id="hu">
+                        </div>
+                        <div class="label" id="demanding">
+                          作业繁重
+                          <input type="hidden" name="demanding" id="dm">
+                        </div>
+                        <div class="label" id="inspiring">
+                          富有灵感
+                          <input type="hidden" name="inspiring" id="is">
+                        </div>
+                        <div class="label" id="vivid">
+                          讲课生动
+                          <input type="hidden" name="vivid" id="vi">
+                        </div>
+                        <div class="label" id="feedback">
+                          反馈及时
+                          <input type="hidden" name="feedback" id="fb">
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -184,7 +260,7 @@
                     <div class="rate-input">
                       <p>这门课获得的成绩（可不填）</p>
                         <select name="grade" class="listdown" id="grade">
-                          <option value="">无</option>
+                          <option value="0">无</option>
                           <option value="A">A(90-100)</option>
                           <option value="B">B(80-90)</option>
                           <option value="C">C(70-80)</option>
@@ -193,19 +269,14 @@
                         </select>
                     </div>
                   </div>
-<!--                   <div class="subtitle">
-                    <div class="num" id="num10">10</div>
-                    <div class="rate-input" id="rate10">
-                      <p>你的专业是什么（可不填）</p>
-                      <input type="text" placeholder="请输入你的专业" id="major"
-                      onkeypress="change_input_color(this.id)" onkeyup="unchange_input_color(this.id)">
-                    </div>
-                  </div> -->
                 </div>
             <!-- ends the right part of rate block-->
           </div>
         </div>
         <!-- ends the rate block-->
+
+
+
 
         <!-- starts the submit block-->
         <div id="container4">
@@ -227,7 +298,13 @@
           </div>
           <div id="submit">
             <input type="submit" id="rateProfessorBtn" name="rateProfessorBtn" class="save" value="提交">
-            <p>取消</p>
+            <div id="return">
+              <a href="/info_page/index2.php?name=<?php echo $row['name'] ?>&school=<?php echo $row['school']; ?>">
+                <div class="sub_return">
+                  返回该教师评论页
+                </div>
+              </a>
+            </div>
           </div>
         </div>
         <!-- ends the submit block-->
@@ -236,5 +313,9 @@
     </main>
     <!-- ends the main content-->
   </div>
+  <?php
+  mysqli_free_result($result);
+  mysqli_close($db);
+   ?>
 </body>
 </html>
