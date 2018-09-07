@@ -85,7 +85,7 @@
           <div class="writing">
             <h1><?php echo $rate_row_num; ?>条学生的评论</h1>
             <div class="btn">
-              <a class="submit-link" href="/submit_page/index3.php">
+              <a class="submit-link" href="/submit_page/index3.php?name=<?php echo $row['name']; ?>&school=<?php echo $row['school']; ?>">
                 <div class="submit-button">
                   <p>发表你的评论</p>
                 </div>
@@ -111,6 +111,33 @@
         <?php
         for($i=0; $i< $rate_row_num; $i++){
           $rate_row= mysqli_fetch_assoc($result2);
+          $rate= $rate_row['rate'];
+          $img;
+          $img_hint;
+          if($rate<=2){
+            $img= "sad";
+          }elseif($rate>=4){
+            $img= "smile";
+          }else {
+            $img= "normal";
+          }
+          switch ($rate) {
+            case 1:
+              $img_hint= "发展空间很大";
+              break;
+            case 2:
+              $img_hint="有待努力";
+              break;
+            case 3:
+              $img_hint="不算亏";
+              break;
+            case 4:
+              $img_hint="来对了";
+              break;
+            case 5:
+              $img_hint="太棒了";
+              break;
+          }
            ?>
         <!-- starts one rate container-->
         <div class="comments-container">
@@ -122,10 +149,12 @@
                     <p><?php echo $rate_row['r_date'] ?></p>
                   </div>
                   <p>
-                    <img src="sadface.jpg" alt="bad" />
+                    <div class="img">
+                      <img src="<?php echo $img; ?>.png" alt="bad" style="width: 35px"/>
+                    </div>
                     <!--here should add a php fun for determining whether the professor is good or not
                         now, we need a rate table-->
-                    <span class="left-margin">不行</span>
+                    <span class="left-margin"><?php echo $img_hint; ?></span>
                   </p>
                   <p>
                     <span class="number"><?php echo $rate_row['rate'] ?></span>
@@ -140,12 +169,26 @@
                   <p><?php echo $rate_row['class_info'] ?></p>
                   <br /><br />
                   <p>学分: <?php echo $rate_row['credit'] ?></p>
-                  <p>考勤: <?php echo $rate_row['is_attend'] ?></p>
+                  <p>考勤是否严格: <?php echo $rate_row['is_attend'] ?></p>
                   <br />
-                  <p>该课程成绩: <?php echo $rate_row['grade'] ?></p>
+                  <p>该课程成绩:
+                    <?php if(!$rate_row['grade']){
+                      echo "暂无";
+                    }else {
+                      echo $rate_row['grade'];
+                    } ?>
+                  </p>
                 </div>
                 <div class="comment-c">
-                  <div class="label"><?php echo $rate_row['tag1'] ?></div>
+                  <div class="label" style="visibility: <?php  if(!$rate_row['tag1']){echo 'hidden';}else{echo 'visible';} ?>">
+                  <?php {echo $rate_row['tag1'];} ?>
+                  </div>
+                  <div class="label" style="visibility: <?php  if(!$rate_row['tag2']){echo 'hidden';}else{echo 'visible';} ?>">
+                  <?php {echo $rate_row['tag2'];} ?>
+                  </div>
+                  <div class="label" style="visibility: <?php  if(!$rate_row['tag3']){echo 'hidden';}else{echo 'visible';} ?>">
+                  <?php {echo $rate_row['tag3'];} ?>
+                  </div>
                   <p><?php echo $rate_row['comment'] ?></p>
                 </div>
               </div>

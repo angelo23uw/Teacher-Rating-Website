@@ -85,13 +85,6 @@ function attendenceno() {
 //  this is the labels
 
 function easygoing() {
-<<<<<<< HEAD
-	this.classList.toggle("selected");
-	if($("eg").value = "no") {
-		$("eg").value = "yes";
-	} else {
-		$("eg").value = "no";
-=======
 	//put easygoing into class: selected_label
 	$("easygoing").classList.toggle("selected-label");
 	//give value if easygoing does not have any value after clicking, else remove the value
@@ -99,7 +92,20 @@ function easygoing() {
 		$("eg").value = "平易近人";
 	}else{
 		$("eg").removeAttribute('value');
->>>>>>> develop
+	}
+	//get the collection with the class:selected_label
+	var selected_labels= document.getElementsByClassName('selected-label');
+	//get the collection with the class: label
+	var labels= document.getElementsByClassName('label');
+	//if the selected_labels are up to 3,
+	//remove all the other unselected ones hover property and also value
+	if(selected_labels.length == 3){
+		for(var i=0; i<7; i++){
+			if(!labels[i].classList.contains('selected-label')){
+				console.log(labels[i]);
+				labels[i].classList.replace("label", "unselected-label");
+			}
+		}
 	}
 }
 
@@ -111,6 +117,16 @@ function respectful() {
 	}else{
 		$("rp").removeAttribute('value');
 	}
+	var selected_labels= document.getElementsByClassName('selected-label');
+	var labels= document.getElementsByClassName('label');
+	if(selected_labels.length == 3){
+		for(var i=0; i<7; i++){
+			if(!labels[i].classList.contains('selected-label')){
+				console.log(labels[i]);
+				labels[i].classList.replace("label", "unselected-label");
+			}
+		}
+	}
 }
 
 function humorous() {
@@ -119,6 +135,16 @@ function humorous() {
 		$("hu").value = "风趣幽默";
 	}else{
 		$("hu").removeAttribute('value');
+	}
+	var selected_labels= document.getElementsByClassName('selected-label');
+	var labels= document.getElementsByClassName('label');
+	if(selected_labels.length == 3){
+		for(var i=0; i<7; i++){
+			if(!labels[i].classList.contains('selected-label')){
+				console.log(labels[i]);
+				labels[i].classList.replace("label", "unselected-label");
+			}
+		}
 	}
 }
 
@@ -129,6 +155,20 @@ function demanding() {
 	}else{
 		$("dm").removeAttribute('value');
 	}
+	var selected_labels= document.getElementsByClassName('selected-label');
+	var labels= document.getElementsByClassName('label');
+	var respectful= document.getElementById('respectful');
+	if(!respectful.classList.contains('selected_label')){
+		labels[i].classList.replace("label", "unselected-label");
+	}
+	if(selected_labels.length == 3){
+		for(var i=0; i<7; i++){
+			if(!labels[i].classList.contains('selected-label')){
+				labels[i].classList.replace("label", "unselected-label");
+			}
+		}
+
+	}
 }
 
 function inspiring() {
@@ -137,6 +177,16 @@ function inspiring() {
 		$("is").value = "富有灵感";
 	}else{
 		$("is").removeAttribute('value');
+	}
+	var selected_labels= document.getElementsByClassName('selected-label');
+	var labels= document.getElementsByClassName('label');
+	if(selected_labels.length == 3){
+		for(var i=0; i<7; i++){
+			if(!labels[i].classList.contains('selected-label')){
+				console.log(labels[i]);
+				labels[i].classList.replace("label", "unselected-label");
+			}
+		}
 	}
 }
 
@@ -147,6 +197,16 @@ function vivid() {
 	}else{
 		$("vi").removeAttribute('value');
 	}
+	var selected_labels= document.getElementsByClassName('selected-label');
+	var labels= document.getElementsByClassName('label');
+	console.log(document.getElementById('vivid'));
+	if(selected_labels.length == 3){
+		for(var i=0; i<7; i++){
+			if(!labels[i].classList.contains('selected-label')){
+				labels[i].classList.replace("label", "unselected-label");
+			}
+		}
+	}
 }
 
 function feedback() {
@@ -155,6 +215,16 @@ function feedback() {
 		$("fb").value = "反馈及时";
 	} else{
 		$("fb").removeAttribute('value');
+	}
+	var selected_labels= document.getElementsByClassName('selected-label');
+	var labels= document.getElementsByClassName('label');
+	if(selected_labels.length == 3){
+		for(var i=0; i<7; i++){
+			if(!labels[i].classList.contains('selected-label')){
+				console.log(labels[i]);
+				labels[i].classList.replace("label", "unselected-label");
+			}
+		}
 	}
 }
 
