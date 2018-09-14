@@ -260,11 +260,7 @@
                     <div class="rate-input">
                       <p>这门课获得的成绩（可不填）</p>
                         <select name="grade" class="listdown" id="grade">
-<<<<<<< HEAD
-                          <option value="">无</option>
-=======
                           <option value="0">无</option>
->>>>>>> develop
                           <option value="A">A(90-100)</option>
                           <option value="B">B(80-90)</option>
                           <option value="C">C(70-80)</option>

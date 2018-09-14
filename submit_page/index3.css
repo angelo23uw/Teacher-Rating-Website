@@ -131,14 +131,11 @@ form {
   border-radius: 0px;
   height: 32px;
   outline: none;
-<<<<<<< HEAD
-=======
   color: #b0aa9c;
   font-size: 15px;
 }
 .listdown option{
   background-color: #e6ddd6;
->>>>>>> develop
 }
 .number {
   font-size: large;
@@ -407,8 +404,9 @@ form {
   width: 600px;
   background-color: white;
   position: relative;
-  box-shadow: 7px 7px 40px 3px grey;
+  box-shadow: 7px 7px 13px grey;
   z-index: 10;
+  background-image: url(bg.png);
 }
 
 #container4 {
@@ -458,6 +456,9 @@ form {
   height: fit-content;
   font-size: xx-large;
   margin-top: 10px;
+  box-shadow: 7px 7px 13px grey;
+  z-index: 10;
+  background-image: url(bg.png);
 }
 #rateProfessorBtn {
     background-color: #b0aa9c;

@@ -85,13 +85,6 @@ function attendenceno() {
 //  this is the labels
 
 function easygoing() {
-<<<<<<< HEAD
-	this.classList.toggle("selected");
-	if($("eg").value = "no") {
-		$("eg").value = "yes";
-	} else {
-		$("eg").value = "no";
-=======
 	//put easygoing into class: selected_label
 	$("easygoing").classList.toggle("selected-label");
 	//give value if easygoing does not have any value after clicking, else remove the value
@@ -99,7 +92,6 @@ function easygoing() {
 		$("eg").value = "平易近人";
 	}else{
 		$("eg").removeAttribute('value');
->>>>>>> develop
 	}
 }
 

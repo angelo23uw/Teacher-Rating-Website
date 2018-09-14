@@ -18,11 +18,7 @@
     }
 
 
-<<<<<<< HEAD
-    $db=@ mysqli_connect('localhost', 'root', 'password', 'web')
-=======
     $db=@ mysqli_connect('localhost', 'root', '', 'web')
->>>>>>> develop
     or die ('unable to connect to server');
     mysqli_query($db, 'set names utf8');
     if(mysqli_connect_errno()){

@@ -50,21 +50,12 @@ main {
     border-radius: 15px;
     font-size: 19px;
     background: #ad4655;
-<<<<<<< HEAD
-    color: #d7cbc1;
-    border: 0px;
-    text-align: center;
-    padding: 1px 0;
-}
-.submit-button:hover{
-  box-shadow: 5px 5px 40px 5px #999999;
-  background-color: #ba5e68;
-=======
     color: #d9d9d9;
     border: 0px;
     text-align: center;
     padding: 1px 0;
     transition: 0.3s;
+    display: inline-block;
 }
 .submit-button:hover{
   box-shadow: 5px 5px 20px 5px #999999;
@@ -73,7 +64,6 @@ main {
 .submit-button:active{
   box-shadow: 3px 3px 15px #999999;
   transform: translate(2px, 2px);
->>>>>>> develop
 }
 ul {
   list-style-type: none;
@@ -160,17 +150,16 @@ ul {
 .info-c {
   width: 80px;
   padding: 10px;
+  background-image: url(bg.png);
 }
 .comment-c {
   width: 330px;
   padding: 10px;
-<<<<<<< HEAD
-=======
+  background-image: url(bg.png);
 }
 .img{
   display: inline-block;
   margin-top: 10px;
->>>>>>> develop
 }
 .left-margin {
   margin-left: 10px;
@@ -215,6 +204,8 @@ ul {
 }
 #search-bar {
   height: 160px;
+  background-image: url(bg.png);
+  background-repeat: repeat;
 }
 #sum {
   width: 118px;
